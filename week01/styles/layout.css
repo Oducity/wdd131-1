@@ -24,10 +24,6 @@ header{
     justify-content: space-between;
 }
 
-/*header p{
-    padding: 50px;
-}*/
-
 header #navigation-bar{
     display: flex;
     justify-content: space-around;
