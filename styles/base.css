@@ -84,6 +84,10 @@ aside{
     border-top-right-radius: 10px;
 }
 
+li a {
+    text-decoration: none;
+}
+
 footer{
     background-color: var(--background-color2);
     color: var(--text-color1);
@@ -158,6 +162,17 @@ h3{
     Aside{
         width: 100%;
         border-radius: 15px;
+    }
+    ul{
+        display: block;
+    }
+    li {
+        display: flex;
+        justify-content: center;
+    }
+    li:hover{
+        text-decoration: underline;
+        color: blue;
     }
 }
 
