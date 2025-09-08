@@ -6,11 +6,16 @@
         <meta name="description" content="Wdd131 - Dynamic Web Fundamentals home / landing page, EngOdus home page, Oducity home page, Odumamwen Evans Henry Aisiokuebor home page">
         <meta name="author" content="Odumamwen Evans Henry Aisiokuebor">
         <link rel="stylesheet" href="styles/base.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sofia&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sofia&display=swap" rel="stylesheet">
         <title>WDD 131 - Dynamic Web Fundamentals - ODUMAMWEN EVANS HENRY AISIOKUEBOR</title>
     </head>
     <body>
         <header>
-            <h1> <span id="course-title"> 131 Dynamic Web Fundamentals</span></h1>
+            <span id="course-title">WDD 131 - Dynamic Web Fundamentals</span>
             <nav id="navigation-bar">
                 <a href="www.linkedin.com/in/odumamwen-henry-aisiokuebor-3557aa280" class="nav-link">Linkedin</a>
                 <a href="https://byupw.instructure.com" class="nav-link">Canvas</a>
@@ -20,7 +25,8 @@
         </header>
 
         <main>
-            <section>
+            <h1 class="author-name">Odumamwen Evans Henry Aisiokuebor</h1>
+            <section class="card">
                 <h2 class="about-me">About Me</h2>
                 <div>
                     <p>My name is Odumamwen Evans Henry Aisiokuebor alias Oducity. I was born and brought up in Nigeria and live with my family, a wife and 3 children in Benin City, Nigeria. I have worked as aluminum roof engineer in two companies for 8 years. Currently, I am working as a lead engineer in Unicon Aluminum and Solar Solutions and also happily serving as a Bishop in the church of Jesus Christ of Latter-Day Saints. I enjoy learning new things and having fun with my family.</p>
@@ -28,8 +34,8 @@
                 </div>
             </section>
         
-            <section>
-                <h2 class="nigeria">Nigeria</h2>
+            <section class="card">
+                <h2 class="country">Nigeria</h2>
                 <hr>
                 <div>
                     <p>Nigeria is the most populated country in africa with over 233.5 million people as of 2025 estimate. Nigeria is a home to 36 states and is located in west africa bordering Niger in the north, Chad by the north-eastern side, Benin Republic in the Eastern, and Cameroon in the east-southern side and stretches to the atlantic ocean in both the southern and western side. Nigeria is highly rich in cultural heritage with about 370 ethnic groups and speaks over 500 languages.</p>
@@ -40,7 +46,8 @@
         </main>
 
         <aside>
-            <h2 class="resources">Web Dev Resources</h2>
+            <h3>Want want more materials, check</h3>
+            <h2 class="resources equal-spacing">Web Dev Resources</h2>
             
             <ul>
                 <li><a href="#">Dev. Community</a></li>
@@ -55,7 +62,8 @@
         </aside>
 
         <footer>
-            <p>&copy; 2025 &nbsp;|&nbsp;  Odumamwen Evans Henry Aisiokuebor &nbsp;|&nbsp;  NIGERIA.</p>
+            <p>&copy; <span id="currentyear"></span> &nbsp;|&nbsp;  Odumamwen Evans Henry Aisiokuebor &nbsp;|&nbsp;  NIGERIA.</p>
+            <p id="lastModified"></p>
         </footer>
     </body>
 </html>
