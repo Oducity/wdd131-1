@@ -42,6 +42,9 @@ span {
     text-align: center;
     font-size: 40px;
 }
+header span{
+    display: block;
+}
 
 nav{
     display: flex;
@@ -137,4 +140,38 @@ h3{
     font-size: x-large;
     font-family: var(--h1-h2-h3-font);
     
+}
+
+@media screen and (max-width: 1600px) {
+    body{
+        display: block;
+        width: 100%;
+    }
+    main{
+        width: 100%;
+        border-radius: 15px;
+    }
+    Aside{
+        width: 100%;
+        border-radius: 15px;
+    }
+}
+
+@media only screen and (max-width: 980px) {
+    body{
+        display: block;
+        height: auto;
+        width: 100%;
+    }
+    div{
+        display: grid;
+    }
+    .about-me, .resources{
+        width: 100%;
+        border-radius: 0;
+    }
+    img{
+        width: 100px;
+        align-self: center;
+    }
 }
