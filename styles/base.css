@@ -106,6 +106,10 @@ img {
     padding: 5px 0 5px 0;
 }
 
+img:hover{
+    zoom: 110%;
+}
+
 div{
     display: flex;
     flex-direction: row;
