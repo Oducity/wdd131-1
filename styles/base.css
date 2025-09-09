@@ -4,6 +4,7 @@
     --background-color1: #000;
     --background-color2: #333;
     --background-color3: white;
+    --background-color4: #eaeff9;
     --body-font: "Lato", Sans-serif;
     --h1-h2-h3-font: "Sofia", Sans-serif;
 }
@@ -80,7 +81,7 @@ main{
 }
 
 aside{
-    background-color: lightblue;
+    background-color: var(--background-color4);
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
 }
