@@ -55,7 +55,7 @@ nav{
 }
 nav a:hover{
     border: 1px solid white;
-    border-radius: 15%;
+    border-radius: 20%;
     padding: 0 10px 0 10px;
     background-color: var(--background-color2);
     font-family: var(--body-font);
@@ -115,7 +115,8 @@ img {
 }
 
 img:hover{
-    zoom: 110%;
+    zoom: 102%;
+    border-radius: 20px;
 }
 
 div{
