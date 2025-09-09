@@ -99,6 +99,10 @@ footer p{
     display: flex;
     justify-content: center;
     color: aliceblue;
+    font-size: 15px;
+}
+footer span {
+    font-size: 15px;
 }
 
 img {
@@ -148,6 +152,13 @@ h3{
     font-size: x-large;
     font-family: var(--h1-h2-h3-font);
     
+}
+
+hr {
+    width: 70%;
+    height: 1.5px;
+    background-color: black;
+    border: 0.5px gold solid;
 }
 
 @media screen and (max-width: 1600px) {
