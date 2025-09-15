@@ -37,6 +37,12 @@
         font-size: large;
         font-family: "Lato", sans-serif;
     }
+    nav a:hover {
+        border: 1px solid greenyellow;
+        border-radius: 20%;
+        padding: 0 10px 0 10px;
+        font-family: "Sofia", sans-serif;
+    }
 
     main {
         display: grid;
@@ -57,6 +63,9 @@
     }
     img{
         width: 35vw;
+    }
+    img:hover {
+        border: 2px solid brown;
     }
     footer {
         display: block;
