@@ -94,6 +94,11 @@ ul li a {
     text-decoration: none;
 }
 
+ul li a:hover {
+    color: darkolivegreen;
+    text-decoration: underline;
+}
+
 footer{
     background-color: var(--background-color2);
     color: var(--text-color1);
