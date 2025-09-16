@@ -80,7 +80,7 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    h1, footer{
+    h1, h2 footer{
         grid-column: 1/3;
         text-align: center;
         font-family: "Lato", "Sofia", sans-serif;
@@ -110,7 +110,7 @@
             display: grid;
             grid-template-columns: 1fr;
         }
-        h1, footer {
+        h1, h2, footer {
             grid-column: 1/2;
         }
         img {

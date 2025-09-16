@@ -56,7 +56,7 @@ html {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
-    h1, footer{
+    h1, h2, footer{
         grid-column: 1/4;
         text-align: center;
         font-family: "Lato", "Sofia", sans-serif;
