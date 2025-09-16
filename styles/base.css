@@ -85,8 +85,12 @@ aside{
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
 }
-
-li a {
+ul {
+    list-style: none;
+}
+ul li a {
+    color: var(--background-color2);
+    font-weight: 600;
     text-decoration: none;
 }
 
