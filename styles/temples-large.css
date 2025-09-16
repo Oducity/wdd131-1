@@ -1,3 +1,4 @@
+
 html {
     background-color: #fff;
 }
@@ -19,6 +20,9 @@ html {
         padding: 35px;
         width: auto;
     }
+    .header .hamburger {
+        display: none;
+    }
     header span {
         width: 30%;
         color: white;
@@ -33,6 +37,7 @@ html {
         display: flex;
         justify-content: space-around;
     }
+    
     header nav a {
         color: white;
         text-align: center;
@@ -73,4 +78,5 @@ html {
         color: #fff;
         padding: 1px 0 1px 0;
     }
+    
 }
