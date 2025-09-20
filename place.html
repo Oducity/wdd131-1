@@ -15,8 +15,41 @@
     <title>Country page</title>
 </head>
 <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header class="flex-head">
+        <img id="country-flag" src="images/nigerian_flag 180x144.webp">
+        <span class="country">Ngeria</span>
+    </header>
+    <main>
+        <h1>Nigeria</h1>
+        <div>
+            <picture>
+                <source srcset="images/wild_african_hippo-1801x902.webp" media="(min-width:1500px)">
+                <source srcset="images/wild_african_hippo-1080x541.webp" media="(min-width:1000px)">
+                <img src="images/wild_african_hippo-450x255.webp" alt="Wildlife hippopotamus in a green, leafy water body." width="450" height="225">
+            </picture>
+            <section class="data-section">
+                <h2 class="data-heading">Data</h2>
+                <p class="area-text">Area: <span class="area-value"></span></p>
+                <p class="capital-p">Capital:<span class="capital-city-value"></span></p>
+                <p class="language-p">Language:<span class="language-value"></span></p>
+                <p class="population-p">Population:<span class="population-value"></span></p>
+                <p class="time-zone-p">Time Zone:<span class="time-zone-value"></span></p>
+                <p class="currency-p">Currency:<span class="currency-value"></span></p>
+                <p class="call-code-p">Call Code:<span class="call-code-value"></span></p>
+                <p class="internet-p">Internet connectivity:<span class="internet-value"></span></p>
+            </section>
+            <section class="weather-section">
+                <h2 class="weather-heading">Weather</h2>
+                <p class="temp-text">Temperature: <span class="temp-value"></span></p>
+                <p class="weather-text">Weather Condition: <span class="weather-condition-value"></span></p>
+                <p class="wind-text">Wind Speed: <span class="wind-speed-value"></span></p>
+                <p class="wind-chill">Wind Chill: <span class="wind-chill-value"></span></p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> &nbsp; 🙋  &nbsp;  Odumamwen Evans Henry Aisiokuebor &nbsp; : 🙋 &nbsp;  Nigeria.</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>
