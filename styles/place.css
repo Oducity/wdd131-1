@@ -1,10 +1,14 @@
 :root{
+    --primary-color1: #f00;
+    --primary-color2: yellow;
     --text-color1: #fff;
     --text-color2: #333;
     --background-color1: #000;
     --background-color2: #333;
     --background-color3: white;
     --background-color4: #eaeff9;
+    --background-color: #01f955;
+    --body-background-color: #afafaf;
     --body-font: "Lato", Sans-serif;
     --h1-h2-h3-font: "Sofia", Sans-serif;
 }
@@ -17,7 +21,7 @@
 body{
     width: 80%;
     align-self: center;
-    background-color: var(--background-color1);
+    background-color: var(--body-background-color);
     padding: 0;
     margin: 0;
     border: 0;
@@ -27,12 +31,93 @@ body{
     box-sizing: border-box;
     color: var(--text-color1);
 }
+.block {
+    width: auto;
+    border: 2px solid var(--primary-color1);
+    border-radius: 7px;
+    background-color: #02f;
+    padding: 3px;
+    align-items: center;
+}
+.flag-span {
+    display: flex;
+    background-color: var(--background-color4);
+    padding: 10px 2px;
+}
+
+.block img {
+    height: 100%;
+    border-radius: 7px;
+    margin-top: 3px;
+}
 .flex-head{
     display: flex;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+}
+.country {
+    width: 100%;
+    background-color: var(--background-color4);
+    color: var(--background-color2);
+    align-self: center;
+    text-align: center;
+}
+.hero {
+    display: flex;
+    position: relative;
+    border: 2px solid var(--primary-color1);
+    border-radius: 8px;
+}
+
+.data-section {
+    display: grid;
+    position: absolute;
+    width: 20%;
+    margin-top: 1.5rem;
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    background-color: var(--background-color2);
+    color: var(--text-color1);
+    border-radius: 5px;
+}
+
+.weather-section {
+    display: grid;
+    position: absolute;
+    width: 15%;
+    margin-top: 25rem;
+    margin-left: 60rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    background-color: var(--background-color2);
+    color: var(--text-color1);
+    border-radius: 5px;
+}
+.data-section p, .weather-section p {
+    text-align: right;
+}
+.data-section h2, .weather-section h2 {
+    background-color: var(--background-color);
+    color: var(--background-color2);
+    position: unset;
+    padding-left: 10px;
+    margin: 10px 10px 10px -10px;
+    border-radius: 0 3px 3px 0;
 }
 
 .hero img {
     width: 100%;
+    border-radius: 8px;
     height: auto;
     object-fit: cover;
+}
+footer {
+    background-color: var(--background-color4);
+    border-radius: 8px;
+    border: 2px solid var(--primary-color1);
+    color: var(--background-color2);
 }
