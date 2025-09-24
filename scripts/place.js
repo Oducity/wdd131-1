@@ -25,19 +25,36 @@ document.getElementById("currency-value").innerText = currency;
 document.getElementById("call-code-value").innerText = callCode;
 document.getElementById("internet-value").innerText = internet;
 
-let temperature = 0;
-let velocity = 0;
+let temperature;
+let velocity;
+let condition;
 let windChill;
 
-function calculateWindChill() {
-    let value = 35.74 + 0.6215 * temperature - 35.75(velocity ** 0.16) + 0.4275 * temperature(velocity ** 0.16);
-    return value;
+if (temperature <= 50 && velocity > 3) {
+    windChill = calculateWindChill(45, 4);
+    document.getElementsByClassName("temperature-value").innerText = temperature;
+    document.getElementsByClassName("w-condition-value").innerText = condition;
+    document.getElementsByClassName("w-speed-value").innerText = condition;
+    document.getElementsByClassName("w-chill-value").innerText = windChill;
+} else {
+    document.getElementsByClassName("temperature-value").innerText = temperature;
+    document.getElementsByClassName("w-condition-value").innerText = condition;
+    document.getElementsByClassName("w-speed-value").innerText = condition;
+    document.getElementsByClassName("w-chill-value").innerText = windChill;
 }
 
-if (temperature <= 50 && velocity > 3) {
-    windChill = calculateWindChill();
-} else {
-    windChill = NaN;
+
+function calculateWindChill(temp, v) {
+    let value = 35.74 + 0.6215 * temp - 35.75(v ** 0.16) + 0.4275 * temp(v ** 0.16);
+    temperature = temp;
+    velocity = v;
+    if (temp >= 86) {
+        condition = " Hot";
+    } else if (temp >= 65 || temp <= 77) {
+        condition = " Fair";
+    } else
+        condition = " Snow or cloudy";
+    return value;
 }
 
 //Wind Chill (°F) = 35.74 + 0.6215T – 35.75(V^0.16) + 0.4275T(V^0.16)//
