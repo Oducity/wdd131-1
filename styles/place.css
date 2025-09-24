@@ -4,6 +4,7 @@
     --text-color1: #fff;
     --text-color2: #333;
     --background-color1: #000;
+    --background-color5: #0ff;
     --background-color2: #333;
     --background-color3: white;
     --background-color4: #eaeff9;
@@ -41,7 +42,7 @@ body{
 }
 .flag-span {
     display: flex;
-    background-color: var(--background-color4);
+    background-color: var(--background-color5);
     padding: 10px 2px;
 }
 
@@ -97,6 +98,7 @@ main{
     color: var(--text-color1);
     border-radius: 5px;
 }
+
 .data-section p, .weather-section p {
     text-align: right;
 }
@@ -108,7 +110,10 @@ main{
     margin: 10px 10px 10px -10px;
     border-radius: 0 3px 3px 0;
 }
-
+.weather-section img {
+    width: 25px;
+    height: 25px;
+}
 .hero img {
     width: 100%;
     border-radius: 8px;
@@ -120,4 +125,6 @@ footer {
     border-radius: 8px;
     border: 2px solid var(--primary-color1);
     color: var(--background-color2);
+    text-align: center;
+    background-color: var(--background-color5);
 }
