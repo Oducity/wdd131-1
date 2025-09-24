@@ -46,8 +46,8 @@ if (temperature <= 50 && velocity > 3) {
 
 function calculateWindChill(temp, v) {
     let value = 35.74 + 0.6215 * temp - 35.75(v ** 0.16) + 0.4275 * temp(v ** 0.16);
-    temperature = temp;
-    velocity = v;
+    temperature = temp + " " + "fahrenheit";
+    velocity = v + " " + "miles";
     if (temp >= 86) {
         condition = " Hot";
     } else if (temp >= 65 || temp <= 77) {
