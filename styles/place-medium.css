@@ -1,0 +1,94 @@
+:root{
+    --primary-color1: #f00;
+    --primary-color2: yellow;
+    --text-color1: #fff;
+    --text-color2: #333;
+    --background-color1: #000;
+    --background-color5: #0ff;
+    --background-color2: #333;
+    --background-color3: white;
+    --background-color4: #eaeff9;
+    --background-color: #01f955;
+    --body-background-color: #afafaf;
+    --body-font: "Lato", Sans-serif;
+    --h1-h2-h3-font: "Sofia", Sans-serif;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 1500px) {
+    body{
+        display: grid;
+    background-color: var(--background-color4);
+    width: 80vw;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    justify-self: center;
+    }
+
+    .flag-span{
+        display: flex;
+        justify-content: space-between;
+        background-color: var(--background-color5);
+        border: 2px solid grey;
+        padding: 15px;
+        width: 100%;
+    }
+    .hero {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+    .hero picture {
+        grid-column: 1/4;
+    }
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+    .data-section, .weather-section {
+        grid-column: 1/4;
+        background-color: var(--background-color1);
+        border: 2px solid var(--primary-color1);
+        margin: 1px;
+    }
+    .data-section h2, .weather-section h2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        background-color: var(--background-color);
+        color: var(--background-color2);
+        border-bottom: 3px saddlebrown solid;
+        border-radius: 0 15px 0 0;
+        margin: 8px 25px 0 0;
+    }
+    .h-span{
+        color: var(--primary-color1);
+        text-align: left;
+    }
+    
+    .data-section p, .weather-section p {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 35px;
+        color: var(--text-color1);
+        font-family: "Lato", sans-serif;
+    }
+    .data-items, .weather-items {
+        text-align: right;
+    }
+    footer {
+        background-color: var(--background-color4);
+        border-radius: 8px;
+        border: 2px solid var(--primary-color1);
+        color: var(--background-color2);
+        text-align: center;
+        background-color: var(--background-color5);
+    }
+    footer p {
+        font-size: larger;
+        font-family: "Lato", sans-serif;
+    }
+}
