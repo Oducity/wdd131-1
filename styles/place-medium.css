@@ -57,9 +57,7 @@
 
         margin: 1px;
     }
-    #cloud-image {
-        background-image: src;
-    }
+    
     .data-section h2, .weather-section h2 {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

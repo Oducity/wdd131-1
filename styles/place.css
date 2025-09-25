@@ -109,9 +109,6 @@
 
     .weather-section img {
         display: none;
-        position: relative;
-        margin: 5px 0 5px 0;
-        width: 50%;
     }
     .weather-section p, .data-section p {
         display: grid;
