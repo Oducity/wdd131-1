@@ -37,7 +37,7 @@
         width: auto;
         border: 2px solid var(--background-color1);
         border-radius: 7px;
-        background-color: #02f;
+        background-color: var(--background-color5);
         padding: 3px;
         align-items: center;
     }
@@ -88,13 +88,14 @@
         border-radius: 5px;
         font-family: "Lato", sans-serif;
     }
+    
 
     .weather-section {
         display: grid;
         position: absolute;
         width: 20%;
-        margin-top:     30rem;
-        margin-left: 1rem;
+        margin-top: 39.4%;
+        margin-left: 78.4%;
         padding-bottom: 1rem;
         padding-top: 1rem;
         background-color: var(--background-color2);
@@ -107,6 +108,7 @@
     }
 
     .weather-section img {
+        display: none;
         position: relative;
         margin: 5px 0 5px 0;
         width: 50%;

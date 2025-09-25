@@ -49,11 +49,16 @@
         width: 100%;
         height: auto;
     }
+    
     .data-section, .weather-section {
         grid-column: 1/4;
-        background-color: var(--background-color1);
+        background-color: var(--background-color2);
         border: 2px solid var(--primary-color1);
+
         margin: 1px;
+    }
+    #cloud-image {
+        background-image: src;
     }
     .data-section h2, .weather-section h2 {
         display: grid;
