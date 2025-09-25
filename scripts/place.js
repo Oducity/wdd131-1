@@ -51,7 +51,7 @@ function calculateWindChill(temp, v) {
 
     if (temp >= 86) {
         condition = " Hot";
-    } else if (temp >= 65 || temp <= 77) {
+    } else if (temp >= 65 && temp <= 77) {
         condition = " Fair";
     } else
         condition = " Snow or cloudy";
