@@ -39,6 +39,7 @@
         border-radius: 7px;
         background-color: var(--background-color5);
         padding: 3px;
+        margin-bottom: 5px;
         align-items: center;
     }
     .flag-span {
