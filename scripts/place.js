@@ -25,36 +25,35 @@ document.getElementById("currency-value").innerText = currency;
 document.getElementById("call-code-value").innerText = callCode;
 document.getElementById("internet-value").innerText = internet;
 
-let temperature;
-let velocity;
+
+const temperature = 45;
+const velocity = 4;
+let temperatureElement;
+let velocityElement;
 let condition;
 let windChill;
 
+
 if (temperature <= 50 && velocity > 3) {
-    windChill = calculateWindChill(45, 4);
-    document.getElementsByClassName("temperature-value").innerText = temperature;
-    document.getElementsByClassName("w-condition-value").innerText = condition;
-    document.getElementsByClassName("w-speed-value").innerText = condition;
-    document.getElementsByClassName("w-chill-value").innerText = windChill;
-} else {
-    document.getElementsByClassName("temperature-value").innerText = temperature;
-    document.getElementsByClassName("w-condition-value").innerText = condition;
-    document.getElementsByClassName("w-speed-value").innerText = condition;
-    document.getElementsByClassName("w-chill-value").innerText = windChill;
+    windChill = calculateWindChill(temperature, velocity);    
 }
 
 
+document.getElementById("temperature-value").innerText = temperatureElement + " " + "deg fahrenheit";
+document.getElementById("w-condition-value").innerText = condition;
+document.getElementById("w-speed-value").innerText = velocityElement + " "+ "miles";
+document.getElementById("w-chill-value").innerText = windChill;
+
 function calculateWindChill(temp, v) {
-    let value = 35.74 + 0.6215 * temp - 35.75(v ** 0.16) + 0.4275 * temp(v ** 0.16);
-    temperature = temp + " " + "fahrenheit";
-    velocity = v + " " + "miles";
+    temperatureElement = temp;
+    velocityElement = v;
+    let value = 35.74 + 0.6215 * temp - 35.75 * (v ** 0.16) + 0.4275 * temp * (v ** 0.16);
+
     if (temp >= 86) {
         condition = " Hot";
     } else if (temp >= 65 || temp <= 77) {
         condition = " Fair";
     } else
         condition = " Snow or cloudy";
-    return value;
+    return value.toFixed(2);
 }
-
-//Wind Chill (°F) = 35.74 + 0.6215T – 35.75(V^0.16) + 0.4275T(V^0.16)//
