@@ -27,7 +27,7 @@ body{
     margin: 0;
     border: 0;
     min-height: 100vh;
-    max-width: 60vw;
+    max-width: 80vw;
     justify-self: center;
     box-sizing: border-box;
     color: var(--text-color1);
@@ -92,8 +92,8 @@ main{
     display: grid;
     position: absolute;
     width: 20%;
-    margin-top: 10rem;
-    margin-left: 56rem;
+    margin-top: 15%;
+    margin-left: 76%;
     padding-bottom: 1rem;
     padding-top: 1rem;
     background-color: var(--background-color2);
@@ -103,6 +103,12 @@ main{
 }
 .h-span {
     color: var(--primary-color1);
+}
+
+.weather-section img {
+    position: relative;
+    margin: 5px 0 5px 0;
+    width: 50%;
 }
 .weather-section p, .data-section p {
     display: grid;
