@@ -82,6 +82,7 @@
     .data-items, .weather-items {
         text-align: right;
     }
+    
     footer {
         background-color: var(--background-color4);
         border-radius: 8px;
@@ -93,5 +94,9 @@
     footer p {
         font-size: larger;
         font-family: "Lato", sans-serif;
+    }
+    main::after{
+        font-family: "Sofia", sans-serif;
+        font-weight: bolder;
     }
 }
