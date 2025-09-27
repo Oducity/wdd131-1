@@ -4,3 +4,7 @@
     --background-color-row1: grey;
     --background-color-row2: #fff;
 }
+
+body {
+    padding: 50px;
+}
