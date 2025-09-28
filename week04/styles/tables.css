@@ -9,7 +9,6 @@ body {
     padding: 10px;
 }
 table {
-    border: 2px solid var(--head-background-color);
     padding: 0.5em 0.2rem;
     width: 400px;
 }
@@ -17,7 +16,12 @@ caption {
     caption-side: bottom;
     font-size: smaller;
     padding: 0.3rem;
+
 }
-th, td {
-    border: 2px solid var(--head-background-color);
+thead {
+    color: var(--background-color-row2);
+    background-color: var(--head-background-color);
+}
+thead th, tbody td {
+    text-align: center;
 }
