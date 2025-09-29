@@ -111,3 +111,34 @@ const temples = [
     }
   // Add more temple objects here...
 ];
+
+
+function createTempleCard() {
+    array.forEach(temple => {
+        let heading = document.createElement("h1");
+        let subHeading = document.createElement("h2");
+        let card = document.createElement("section");
+        let name = document.createElement("h3");
+        let place = document.createElement("p");
+        let dedicate = document.createElement("p");
+        let space = document.createElement("p");
+        let image = document.createElement("img");
+
+        name.textContent = temple.templeName;
+        place.innerHTML = `<span class="label">Location:</span><span class="value"> ${temple.location}</span>`;
+        dedicate.innerHTML = `<span class="label">Dedicated:</span><span class="value"> ${temple.dedicated}</span>`;
+        space.innerHTML = `<span class="label">Area:</span><span class="value"> ${temple.area}</span>`;
+        image.setAttribute("src", temple.imageUrl);
+        image.setAttribute("alt", `${temple.templeName} temple`);
+        image.setAttribute("laoding", "lazy");
+
+        card.appendChild(name);
+        card.appendChild(place);
+        card.appendChild(dedicate);
+        card.appendChild(space);
+        card.appendChild(image);
+
+        document.querySelector(".temple-box").appendChild(card);
+
+    });
+}
