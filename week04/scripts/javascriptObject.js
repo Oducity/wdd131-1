@@ -1,3 +1,10 @@
+
+/*
+Course Learning Outcomes:
+Demonstrate proficiency with JavaScript language syntax.
+Use JavaScript to respond to events and dynamically modify HTML.
+*/
+
 let aCourse = {
     code: "WDD131",
     title: "Dynamic Web Fundamentals",
