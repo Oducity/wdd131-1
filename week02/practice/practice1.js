@@ -30,11 +30,41 @@ function isPrime(n) {
     return true;
 }
 
-console.log(araay.filter(isPrime));
+console.log(array.filter(isPrime));
 
 
 /* Array.map() method simple use */
 
 const array1 = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
-const mapped = array1.map((value) => parseInt(value, 10));
+const mapped = array1.map((value) => parseInt(value, 10)); //Called the map() method, pass in a arrow function "=>" which takes value as parameter, within the function, convert to int using the parseInt(value, 10) function and store in a variable "mapped".
 console.log(mapped);
+
+/*The array.reduce() method is used to reduce the array to a
+ single value. It executes a reducer function on each element
+ of the array, resulting in a single output value. The reducer
+ function takes four arguments: accumulator, current value,
+ current index, source array. The reducer function's
+returned value is assigned to the accumulator, whose value is
+remembered across each iteration throughout the array and
+ultimately becomes the final, single resulting value. */
+
+//First use case, this takes the initialValue as the
+// currentvalue and iteration and calculation starts with
+// element at index 0 and the result is the sum of all
+// elements in the array.
+
+const givenNumbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const initialValue = 0;
+const sumWithInitialValue = givenNumbers.reduce((acummulator, currentValue) => acummulator + currentValue, initialValue);
+console.log(sumWithInitialValue);
+
+//Second use case, this takes the element at index 0 as the
+// currentvalue and iteration and calculation starts with
+// element at index 1 and the result is the sum of all
+// iterated and calculated elements in the array..
+
+const givenNumbers1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const sumWithInitialValue1 = givenNumbers1.reduce(
+    (acum, currentVal) => acum + currentVal, initial
+);
+console.log(sumWithInitialValue1);
