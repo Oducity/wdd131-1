@@ -73,6 +73,41 @@ const temples = [
     area: 116642,
     imageUrl:
     "https://content.churchofjesuschrist.org/templesldsorg/bc/Temples/photo-galleries/mexico-city-mexico/400x250/mexico-city-temple-exterior-1518361-wallpaper.jpg"
-  },
+    },
+    {
+        templeName: "Adelaide Australia",
+        location: "Adelaide, Austrlia",
+        dedicated: "2000, June, 15",
+        area: "10700",
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/adelaide-australia-temple/adelaide-australia-temple-4359-thumb.jpg"
+    },
+    {
+        templeName: "Bangkok Thailand",
+        location: "Bangkok, Thailand",
+        dedicated: "2023, October, 22",
+        area: "48525",
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bangkok-thailand-temple/bangkok-thailand-temple-8011-thumb.jpg",
+    },
+    {
+        templeName: "Auckland New Zealand",
+        location: "Auckland, New Zealand",
+        dedicated: "2025, April, 13",
+        area: "45456",
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/auckland-new-zealand-temple/auckland-new-zealand-temple-57800-thumb.jpg",
+    },
+    {
+        templeName: "Bern Switzerland",
+        location: "Bern, Switzerland",
+        dedicated: "1955, September, 11 - 15",
+        area: "35546",
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/bern-switzerland-temple/bern-switzerland-temple-54641-thumb.jpg",
+    },
+    {
+        templeName: "Rome Italy",
+        location: "Rome, Italy",
+        dedicated: "2019, March, 10 - 12",
+        area: "41010",
+        imageUrl: "https://churchofjesuschristtemples.org/assets/img/temples/rome-italy-temple/rome-italy-temple-2642-thumb.jpg",
+    }
   // Add more temple objects here...
 ];
