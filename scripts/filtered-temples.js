@@ -117,31 +117,43 @@ const newTemples = document.querySelector("#new-temples");
 const largeTemples = document.querySelector("#large-temples");
 const smallTemples = document.querySelector("#small-temples");
 
+
+
 allTemples.addEventListener("click", () => {
+    
     createTempleCard(temples);
 });
 
 largeTemples.addEventListener("click", () => {
+    
     createTempleCard(temples.filter(temple => temple.area > 90000));
 });
 
 smallTemples.addEventListener("click", () => {
+    
     createTempleCard(temples.filter(temple => temple.area < 10000));
 });
 
 oldTemples.addEventListener("click", () => {
+    
     createTempleCard(temples.filter(temple => parseInt(temple.dedicated.substring(0, 4), 10) < 1900));
 });
 
 newTemples.addEventListener("click", () => {
+    
     createTempleCard(temples.filter(temple => parseInt(temple.dedicated.substring(0, 4), 0) > 2000));
+    pageContent = "Below are some Temples";
 });
+
 
 function createTempleCard(modifiedTemples) {
     document.querySelector(".temple-box").innerHTML = "";
+    let heading = document.createElement("h1");
+    heading.textContent = "Temples";
+    document.querySelector(".temple-box").appendChild(heading);
+
     modifiedTemples.forEach(temple => {
-        //let heading = document.createElement("h1");
-        //let subHeading = document.createElement("h2");
+        
         let card = document.createElement("section");
         let name = document.createElement("h3");
         let place = document.createElement("p");
@@ -156,8 +168,7 @@ function createTempleCard(modifiedTemples) {
         image.setAttribute("src", temple.imageUrl);
         image.setAttribute("alt", `${temple.templeName} temple`);
         image.setAttribute("laoding", "lazy");
-        //image.style.width = "500px";
-        //image.style.height = "300px";
+        
 
         card.appendChild(name);
         card.appendChild(place);
