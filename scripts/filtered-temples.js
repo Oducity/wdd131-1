@@ -177,6 +177,5 @@ function createTempleCard(modifiedTemples) {
         card.appendChild(image);
 
         document.querySelector(".temple-box").appendChild(card);
-
     });
 };
