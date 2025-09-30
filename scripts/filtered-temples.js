@@ -16,7 +16,10 @@ hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("hamburger-quit");
 });
 
-
+/** Develop responsive web pages that follow best practices and use valid HTML and CSS.
+Demonstrate proficiency with JavaScript language syntax.
+Use JavaScript to respond to events and dynamically modify HTML.
+Demonstrate the traits of an effective team member, including clear communication, collaboration, fulfilling assignments, and meeting deadlines. */
 
 const temples = [
     {
@@ -106,11 +109,37 @@ const temples = [
   
 ];
 
-createTempleCard();
+createTempleCard(temples);
 
-function createTempleCard() {
+const allTemples = document.querySelector("#home-temples")
+const oldTemples = document.querySelector("#old-temples");
+const newTemples = document.querySelector("#new-temples");
+const largeTemples = document.querySelector("#large-temples");
+const smallTemples = document.querySelector("#small-temples");
+
+allTemples.addEventListener("click", () => {
+    createTempleCard(temples);
+});
+
+largeTemples.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => temple.area > 90000));
+});
+
+smallTemples.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => temple.area < 10000));
+});
+
+oldTemples.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => parseInt(temple.dedicated.substring(0, 4), 10) < 1900));
+});
+
+newTemples.addEventListener("click", () => {
+    createTempleCard(temples.filter(temple => parseInt(temple.dedicated.substring(0, 4), 0) > 2000));
+});
+
+function createTempleCard(modifiedTemples) {
     document.querySelector(".temple-box").innerHTML = "";
-    temples.forEach(temple => {
+    modifiedTemples.forEach(temple => {
         //let heading = document.createElement("h1");
         //let subHeading = document.createElement("h2");
         let card = document.createElement("section");
@@ -139,4 +168,4 @@ function createTempleCard() {
         document.querySelector(".temple-box").appendChild(card);
 
     });
-}
+};
