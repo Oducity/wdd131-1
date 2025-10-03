@@ -1,8 +1,30 @@
-
+:root {
+    --primary-color1: #003f88; /*blue*/
+    --primary-color2: #640d14; /*Red*/
+    --secondary-color1: #004f2d; /*Green*/
+    --secondary-color2: #3c096c; /*purple*/
+    --accent-color1: #fdf0d5; /*Cream*/
+    --accent-color2: #edf2fa; /*skye blue*/
+}
 
 * {
     margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
+}
+body {
+    width: 100vw;
+}
+header{
+    width: 80%;
+    
+}
+header span {
+    display: block;
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    
 }
