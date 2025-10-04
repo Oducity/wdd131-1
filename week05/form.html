@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BYUI-WDD131 - Web Form">
+    <meta name="author" content="Odumamwen Evans Henry Aisiokuebor">
+    <link rel="stylesheet" href="">
+    <script src="scripts/form.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <form method="get" action="review.html" class="web-form">
+
+            <label for="product-name">Product name
+                <select name="product" id="product-name" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="lonspan-stucco">Lonspan Stucco</option>
+                    <option value="lonspan-color">Lonspan Color</option>
+                    <option value="metcopo-stucco">Metcopo Stucco</option>
+                    <option value="metcopo-color">Metcopo Color</option>
+                    <option value="steptile-stucco">Steptile Stucco</option>
+                    <option value="steptile-color">Steptile Color</option>
+                    <option value="metrotile-bond">Metrotile Bond</option>
+                    <option value="metrotile-chingo">Metrotile Chingo</option>
+                    <option value="metrotile-classic">Metrotile classic</option>
+                </select>
+            </label>
+            
+                <div>Overall Rating</div>
+                <label for="rating1">*<input id="rating1" type="radio" name="rating" value="1-star"></label>
+                <label for="rating2">**<input id="rating2" type="radio" name="rating" value="2-star"></label>
+                <label for="rating3">***<input id="rating3" type="radio" name="rating" value="3-star"></label>
+                <label for="rating4">****<input id="rating4" type="radio" name="rating" value="4-star"></label>
+                <label for="rating5">*****<input id="rating5" type="radio" name="rating" value="5-star"></label>
+
+            <label for="date">Date of installation<input type="date" id="date" name="date" required></label>
+            <fieldset>
+                <legend>Which features did you find useful in the product?<span>(Check all that apply)</span></legend>
+                <label for="durability"><input id="durability" type="checkbox" name="durability" value="features">Durability</label>
+                <label for="ease-of-use"><input id="ease-of-use" type="checkbox" name="ease-of-use" value="features">Ease of use</label>
+                <label for="performance"><input id="performance" type="checkbox" name="performance" value="features">Performance</label>
+                <label for="design"><input id="design" type="checkbox" name="design" value="features">Design</label>
+            </fieldset>
+            <label for="review">Written Review<span>(optional)</span><textarea name="review" id="review" placeholder="You may write your review here!"></textarea></label>
+            <label for="username">Your Name <span>(Optional)</span><input type="text" id="username" placeholder="Your name"></label>
+            <input type="submit" value="Post My Review">
+        </form>
+    </main>
+    <footer>
+        <p>&copy; <span id="currentyear"></span> &nbsp; 👍 &nbsp;  Odumamwen Evans Henry Aisiokuebor &nbsp; 👍 &nbsp;  Nigeria.</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+</html>
