@@ -5,47 +5,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="BYUI-WDD131 - Web Form">
     <meta name="author" content="Odumamwen Evans Henry Aisiokuebor">
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="styles/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Sofia&display=swap" rel="stylesheet">
     <script src="scripts/form.js" defer></script>
     <title>Document</title>
 </head>
 <body>
+    <header><h1>Product Review</h1></header>
     <main>
         <form method="get" action="review.html" class="web-form">
 
-            <label for="product-name">Product name
-                <select name="product" id="product-name" required>
-                    <option value="" disabled selected>Select an option</option>
-                    <option value="lonspan-stucco">Lonspan Stucco</option>
-                    <option value="lonspan-color">Lonspan Color</option>
-                    <option value="metcopo-stucco">Metcopo Stucco</option>
-                    <option value="metcopo-color">Metcopo Color</option>
-                    <option value="steptile-stucco">Steptile Stucco</option>
-                    <option value="steptile-color">Steptile Color</option>
-                    <option value="metrotile-bond">Metrotile Bond</option>
-                    <option value="metrotile-chingo">Metrotile Chingo</option>
-                    <option value="metrotile-classic">Metrotile classic</option>
-                </select>
-            </label>
-            
-                <div>Overall Rating</div>
-                <label for="rating1">*<input id="rating1" type="radio" name="rating" value="1-star"></label>
-                <label for="rating2">**<input id="rating2" type="radio" name="rating" value="2-star"></label>
-                <label for="rating3">***<input id="rating3" type="radio" name="rating" value="3-star"></label>
-                <label for="rating4">****<input id="rating4" type="radio" name="rating" value="4-star"></label>
-                <label for="rating5">*****<input id="rating5" type="radio" name="rating" value="5-star"></label>
+            <div>
+                <label for="product-name" class="product-name"><span class="product-name-span">Product name <strong class="asterisk">*</strong></span>
+                    <select name="product" id="product-name" required>
+                        <option value="" disabled selected>Select an option</option>
+                    </select>
+                </label>
+            </div>
 
-            <label for="date">Date of installation<input type="date" id="date" name="date" required></label>
-            <fieldset>
-                <legend>Which features did you find useful in the product?<span>(Check all that apply)</span></legend>
-                <label for="durability"><input id="durability" type="checkbox" name="durability" value="features">Durability</label>
-                <label for="ease-of-use"><input id="ease-of-use" type="checkbox" name="ease-of-use" value="features">Ease of use</label>
-                <label for="performance"><input id="performance" type="checkbox" name="performance" value="features">Performance</label>
-                <label for="design"><input id="design" type="checkbox" name="design" value="features">Design</label>
-            </fieldset>
-            <label for="review">Written Review<span>(optional)</span><textarea name="review" id="review" placeholder="You may write your review here!"></textarea></label>
-            <label for="username">Your Name <span>(Optional)</span><input type="text" id="username" placeholder="Your name"></label>
-            <input type="submit" value="Post My Review">
+            
+            <div class="relative">
+                <p class="rating-p">Overall Rating <strong class="asterisk">*</strong></p>
+                <section class="rate-section" required>
+                    <label for="rating1" class="rate-icon"><span>&star;</span><input id="rating1" type="radio" name="rating" value="1-star"></label>
+                    <label for="rating2" class="rate-icon"><span>&star;&star;</span><input id="rating2" type="radio" name="rating" value="2-star" ></label>
+                    <label for="rating3" class="rate-icon"><span>&star;&star;&star;</span><input id="rating3" type="radio" name="rating" value="3-star"></label>
+                    <label for="rating4" class="rate-icon"><span>&star;&star;&star;&star;</span><input id="rating4" type="radio" name="rating" value="4-star"></label>
+                    <label for="rating5" class="rate-icon"><spann>&star;&star;&star;&star;&star;</spann><input id="rating5" type="radio" name="rating" value="5-star"></label>
+                </section>
+            </div>
+
+            
+            <div>
+                <label for="date" class="installation-date"><span class="date-span">Date of installation <strong class="asterisk">*</strong> </span><input type="date" id="date" name="date" required></label>
+            </div>
+
+            
+            <div class="relative" id="features">
+                <p class="features">Which features did you find useful in the product?<span>(Check all that apply)</span></p>
+                <label for="durability"><input id="durability" type="checkbox" name="durability" value="feature"><span>Durability</span></label>
+                <label for="ease-of-use"><input id="ease-of-use" type="checkbox" name="ease-of-use" value="feature"><span>Ease of use</span></label>
+                <label for="performance"><input id="performance" type="checkbox" name="performance" value="feature"><span>Performance</span></label>
+                <label for="design"><input id="design" type="checkbox" name="design" value="feature"><span>Design</span></label>
+            </div>
+
+
+            <div>
+                <label for="review" class="review"><span> Written Review<strong class="optional">(optional)</strong></span>
+                    <textarea name="review" id="review" placeholder="You may write your review here!"></textarea>
+                </label>
+            </div>
+
+            
+            <div>
+                <label for="username" class="username"><span class="name"> Name <strong class="optional">(Optional)</strong></span>
+                    <input type="text" id="username" placeholder="Your name">
+                </label>
+            </div>
+
+
+            <div class="submit-div">
+                <input type="submit" value="Post My Review">
+                <p>Note: All required fields are marked asterisk(<strong class="asterisk">*</strong>).</p>
+            </div>
+
         </form>
     </main>
     <footer>
