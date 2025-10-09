@@ -6,6 +6,7 @@
     --accent-color1: #FDF0D5;
     --accent-color2: #EDF2F4;
     --border-color: grey;
+    --background-color3: #cdcdcd;
 }
 
 
@@ -126,4 +127,35 @@ footer {
     text-align: left;
     grid-row-gap: 30px;
     border: 2px solid var(--border-color);
+    padding: .5rem;
+}
+
+.user-guide {
+    padding: .5rem;
+}
+
+.calculator h2, .user-guide h2 {
+    font-size: 35px;
+    padding: 10px 0 0 5px;
+    text-decoration: underline;
+}
+
+.calculator p, .user-guide p {
+    padding-left: 1rem;
+}
+
+.calc-main legend {
+    font-family: "Merriweather", sans-serif;
+    padding:  10px 15px;
+    margin-top: 1.2rem;
+    margin-left: -0.85rem;
+    color: var(--secondary-color2);
+    background-color: var(--background-color3);
+}
+.corogated-sheet, .flat-Sheet {
+    display: grid;
+    grid-row-gap: 1rem;
+    border: 2px solid var(--border-color);
+    background-color: var(--background-color3);
+    color: #000;
 }
