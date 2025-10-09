@@ -1,5 +1,5 @@
 
-const homePage = document.querySelector(".home-button");
+
 
 const roofs = [
     {
@@ -20,6 +20,16 @@ const roofs = [
 ];
 
 createRoofBox(roofs);
+
+const homePage = document.querySelector("#home-button");
+const about = document.querySelector("#about-us-button");
+
+
+homePage.addEventListener("click", () => {
+    createRoofBox(roofs);
+})
+
+
 
 
 function createRoofBox(roof) {
@@ -43,3 +53,9 @@ function createRoofBox(roof) {
         document.querySelector(".main").appendChild(xtion); //Append the section element the the main element.
     });
 };
+
+
+
+/*      ====================================================================        */
+
+
