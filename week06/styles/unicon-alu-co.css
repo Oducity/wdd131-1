@@ -117,4 +117,13 @@ footer {
     margin-top: 18.3rem;
 }
 
+/*  ======================================================================================  */
 
+
+.calculator {
+    display: grid;
+    align-content: center;
+    text-align: left;
+    grid-row-gap: 30px;
+    border: 2px solid var(--border-color);
+}
