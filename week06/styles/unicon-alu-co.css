@@ -7,6 +7,7 @@
     --accent-color2: #EDF2F4;
     --border-color: grey;
     --background-color3: #cdcdcd;
+    --background-G: linear-gradient(15deg, brown, blue, purple, green, deeppink);
 }
 
 
@@ -128,6 +129,8 @@ footer {
     grid-row-gap: 30px;
     border: 2px solid var(--border-color);
     padding: .5rem;
+    border-radius: 7px;
+    background-color: var(--background-color3);
 }
 
 .user-guide {
@@ -146,16 +149,41 @@ footer {
 
 .calc-main legend {
     font-family: "Merriweather", sans-serif;
+    font-weight: 700;
     padding:  10px 15px;
     margin-top: 1.2rem;
     margin-left: -0.85rem;
     color: var(--secondary-color2);
-    background-color: var(--background-color3);
 }
 .corogated-sheet, .flat-Sheet {
     display: grid;
     grid-row-gap: 1rem;
     border: 2px solid var(--border-color);
-    background-color: var(--background-color3);
+    border-radius: 7px;
     color: #000;
+}
+
+.calc-main .calculator label {
+    display: grid;
+    font-family: "Lato";
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.calc-main input[type="text"] {
+    font-size: 16px;
+    width: 100%;
+    max-width: 600px;
+    height: 40px;
+    padding: 0 8px;
+    font-family: "Roboto", sans-serif;
+}
+
+.calc-main .calculator input[type="button"] {
+    height: 60px;
+    background-color: --background-G: linear-gradient(15deg, brown, blue, purple, green, deeppink);;
+}
+
+.calc-footer {
+    margin: 0;
 }
