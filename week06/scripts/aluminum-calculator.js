@@ -2,7 +2,7 @@
 
 
 
-
+let globalTotal = 0;
 
 //Get the roofing sheets input
 const roofInput = document.querySelector("#roof-sheets");
@@ -20,7 +20,7 @@ const ceilingStr = ceilingInput.value;
 //====================================================================================
 
 //Get the ridge input
-const ridgeLInput = document.querySelector("#ridges");
+const ridgeInput = document.querySelector("#ridges");
 const ridgeLength = ridgeInput.value;
 const ridgeWInput = document.querySelector("#ridge-width");
 const ridgeWidth = ridgeWInput.value;
@@ -66,6 +66,10 @@ const gutterWidth = gutterWidthInput.value;
 //Get the input button and asign it to variable button
 const button = document.getElementsByName("button");
 
+button.addEventListener("click", () => {
+    ComputeFullRoof();
+});
+
 //Put all trimmers value into trimmers array.
 const trimmers = [
     {
@@ -107,30 +111,53 @@ const trimmers = [
 
 
 
-let roofList = roofStr.split(",");
-let claddingList = claddingStr.split(",");
-let ceilingList = ceilingStr.split(",");
+const roofList = roofStr.split(",");
+const claddingList = claddingStr.split(",");
+const ceilingList = ceilingStr.split(",");
 
 
+
+
+
+function ComputeFullRoof() {
+    //document.querySelector(".result-box").innerHTML = ""; //Empty the result section in the aluminum-calculator.html.
+
+    const resultBox = document.querySelector(".result-box"); // Store the empty result section in the variable resultBox.
+
+    const resultHeading = document.createElement("h2"); // Create h2 element.
+    resultHeading.innerText = "Your Result" // Write text into the h2 element.
+    resultBox.appendChild(resultHeading); //Added h2 element and value to resultBox.
+
+    const resultP = document.createElement("p"); // Create paragraph element.
+    resultP.innerText = "Below is the calculated aluminum roof materials needed to complete the roof according to the information you provided."; //Write text to the p element.
+    resultBox.appendChild(resultP); //Append p element to resultBox;
+
+
+    calculateTrimmers(trimmers); //Call the calculateTrimmers() function.
+    calculateCorogatedSheets(roofList); //Call the calculateCorogatedSheets() function and pass in the roofList array.
+    calculateCorogatedSheets(claddingList); //Call the calculateCorogatedSheets() function and pass in the claddingList array.
+    calculateCorogatedSheets(ceilingList); // call the calculateCorogatedSheets() function and pass in the ceilingList array.
+    
+    const globalTotalP = document.createElement(p); // Create p element for the total meters for both the roof, cladding, ceiling and trimmers.
+    globalTotalP.innerHTML = `Total Aluminum Materials : <strong>${globalTotal}</strong>`; // Using string literal, stored the total meters for everything in the globalTotalP variable.
+    resultBox.appendChild(globalTotalP);
+
+}
 
 
 
 function calculateTrimmers(allTrimmers) {
-    document.querySelector(".result-box").innerHTML = ""; //Empty the result section in the aluminum-calculator.html.
     const resultBox = document.querySelector(".result-box"); // Store the empty result section in the variable resultBox.
-    const resultHeading = document.createElement("h2"); // Create h2 element.
-    resultHeading.innerText = "Your Result" // Write text into the h2 element.
 
-    let resultP = document.createElement("p"); // Create paragraph element.
-    resultP.innerHTML = "Below is the calculated aluminum roof materials needed to complete the roof according to the information you provided."; //Write text to the p element.
-
-
+    const fs1 = document.createElement("fieldset");// Create fieldset element.
+    const le1 = document.createElement("legend");
+    le1.innerText = "Trimmers/Flat Sheet";
+    fs1.appendChild(le1);
+    
+    
     let flatSheet = 0; // Initialize the total meters of flat sheet for all trimmers to zero.
-    const adjustment = (flatSheet / 100) * 7; //Frabrication error adjustment (7 percent).
     let listOfTrimmers = []; //Place all trimmers and individual subtotal meter in listOfTrimmers array.
-    let totalFlatSheet = flatSheet + adjustment; //Add frabrication error adjustment to the total flat sheet.
-
-
+    
     allTrimmers.forEach(trimmer => {
         let nameOfTrimmer = trimmer.nameOfItem; // Set the name of each trimmer in iteration to nameOfTrimmers.
         let length = parseFloat(trimmer.lengthOfItem); //Convert lengthOfItem in iteration to float and store it in length.
@@ -142,4 +169,55 @@ function calculateTrimmers(allTrimmers) {
         listOfTrimmers.push(trimmerValue); //Update the listOfTrimmers array.
 
     });
-}
+    const pOfTrimmers = document.createElement(p); //Paragraph for the list of all computed trimmers.
+    const pOfTotalMeters = document.createElement(p); //Assign paragraph for the total meters of trimmers.
+    const pOfAdjustment = document.createElement(p); // Parahraph for fabrication error adjustment.
+
+    const adjustment = (flatSheet / 100) * 7; //Frabrication error adjustment (7 percent).
+    let totalFlatSheet = flatSheet + adjustment; //Add frabrication error adjustment to the total flat sheet.
+
+    pOfTrimmers.innerHTML = `All Trimmers Brakedown: ${listOfTrimmers}`; // Store array listOfTrimmers in paragraph pOfTrimmers.
+    pOfTotalMeters.innerHTML = `The Total Meter for All Trimmers: ${totalFlatSheet}`; //Store total meters of all trimmers in the paragraph of pOfTotalTrimmers.
+    pOfAdjustment.innerHTML = `Added Meters for Fabrication Error Adjustment: ${adjustment}`; // Store the fabrication error adjustment added value in pOfAdjusment.
+
+    fs1.appendChild(pOfTrimmers); //Append paragraph of array of trimmers to the fieldset.
+    fs1.appendChild(pOfAdjustment); //Append paragraph of fabrication error adjustment value to the fieldset.
+    fs1.appendChild(pOfTotalMeters); //Append the paragraph of the total meter of all trimmers to the fieldset.
+
+    resultBox.appendChild(fs1);
+
+};
+
+
+
+
+function calculateCorogatedSheets(sheets) {
+    const resultBox = document.querySelector(".result-box"); // Store the empty result section in the variable resultBox.
+
+    const fs = document.createElement("fieldset"); // create a fieldset element.
+    const le = document.createElement("legend");//Create a legend element.
+    le.innerText = `${sheets.name}`;//Fix the text content of the legend element.
+    fs.appendChild(le); //Append legend to the fieldset.
+    const p2 = document.createElement("P"); //Create second paragraph.
+    
+    let roofingTotal = 0;//Initialize the total meter in the list.
+
+
+    sheets.forEach(sheet => {
+        const p1 = document.createElement("p");    
+        let dimensions = sheet.split(" "); //Split the length and width snd store in array dimension.
+        let sheetLength = parseFloat(dimensions[0]); //Convert the length at index 0 from string to float value.
+        let sheetQuantity = Math.ceil(parseFloat(dimensions[1])); //Convert the width at index 1 from string to float and round it up.
+        let sheetTotal = sheetLength * sheetQuantity; //Get the total meter by multiplying the length and the quantity.
+        roofingTotal += sheetTotal; //Update the total meters in the list.
+        p1.innerText = `Length: ${sheetLength}   X   Quantity: ${sheetQuantity}  =  Sub-Total: ${sheetTotal}`;
+        fs.appendChild(p1);
+
+    });
+    p2.innerHTML = `<strong>${sheets.name} Total:     ${roofingTotal}</strong>`; //Store total meter along with the sheet type in the p2 element.
+    fs.appendChild(p2); //Append p2 into the fieldset.
+    globalTotal += roofingTotal; // Update total meter in the globalTotal variable.
+
+    resultBox.appendChild(fs);
+
+};
