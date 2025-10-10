@@ -1,6 +1,6 @@
 
 
-
+const calculateBtn = document.getElementById("calculate-all");
 
 let globalTotal = 0;
 
@@ -19,95 +19,14 @@ const ceilingStr = ceilingInput.value;
 
 //====================================================================================
 
-//Get the ridge input
-const ridgeInput = document.querySelector("#ridges");
-const ridgeLength = ridgeInput.value;
-const ridgeWInput = document.querySelector("#ridge-width");
-const ridgeWidth = ridgeWInput.value;
-
-//Get the top-trimmers input
-const topTrimmerInput = document.querySelector("#top-trimmer-length");
-const topTrimmerLength = topTrimmerInput.value;
-const topTrimmerwidthInput = document.querySelector("#top-trimmers-width");
-const topTrimmerWidth = topTrimmerwidthInput.value;
-
-//Get the Badge-board input
-const bBInput = document.querySelector("#badge-board-length");
-const bBlength = bBInput.value;
-const bBWidthInput = document.querySelector("#badge-board-width");
-const bBWidth = bBWidthInput.value;
-
-//Get the gutter trimmers input
-const gTrimmersInput = document.querySelector("#gutter-trimmers");
-const gutterTrimmerLength = gTrimmersInput.value;
-const gTrimmerWidthInput = document.querySelector("#gutter-trimmers-width");
-const gutterTrimmerWidth = gTrimmerWidthInput.value;
-
-//Get the bottom-trimmers input
-const bottomTrimmersInput = document.querySelector("#bottom-trimmers");
-const bottomTL = bottomTrimmersInput.value;
-const bottomTrimmerW = document.querySelector("#bottom-trimmers-width");
-const bottomTW = bottomTrimmerW.value;
-
-//Get the wall-trimmers input
-const wTInput = document.querySelector("#wall-trimmers");
-const wTLength = wTInput.value;
-const wTWidthInput = document.querySelector("#wall-trimmers-width");
-const wTWidth = wTWidthInput.value;
-
-//Get the gutter input
-const gutterInput = document.querySelector("#gutters");
-const gutterLength = gutterInput.value;
-const gutterWidthInput = document.querySelector("#gutter-width");
-const gutterWidth = gutterWidthInput.value;
 
 //====================================================================================
 
 //Get the input button and asign it to variable button
-const button = document.getElementsByName("button");
-
-button.addEventListener("click", () => {
+calculateBtn.addEventListener("click", () => {
     ComputeFullRoof();
-});
+})
 
-//Put all trimmers value into trimmers array.
-const trimmers = [
-    {
-        nameOfItem: ridgeLInput.name,
-        lengthOfItem: ridgeLength,
-        widthOfItem : ridgeWidth
-    },
-    {
-        nameOfItem: topTrimmerInput.name,
-        lengthOfItem: topTrimmerLength,
-        widthOfItem: topTrimmerWidth
-    },
-    {
-        nameOfItem: bBInput.name,
-        lengthOfItem: bBlength,
-        widthOfItem: bBWidth
-    },
-    {
-        nameOfItem: gTrimmersInput.name,
-        lengthOfItem: gutterTrimmerLength,
-        widthOfItem: gutterTrimmerWidth
-    },
-    {
-        nameOfItem: bottomTrimmersInput.name,
-        lengthOfItem: bottomTL,
-        widthOfItem: bottomTW
-    },
-    {
-        nameOfItem: wTInput.name,
-        lengthOfItem: wTLength,
-        widthOfItem: wTWidth
-    },
-    {
-        nameOfItem: gutterInput.name,
-        lengthOfItem: gutterLength,
-        widthOfItem: gutterWidth
-    }
-]
 
 
 
@@ -119,8 +38,9 @@ const ceilingList = ceilingStr.split(",");
 
 
 
-function ComputeFullRoof() {
-    //document.querySelector(".result-box").innerHTML = ""; //Empty the result section in the aluminum-calculator.html.
+function ComputeFullRoof() {    //document.querySelector(".result-box").innerHTML = ""; //Empty the result section in the aluminum-calculator.html.
+
+    
 
     const resultBox = document.querySelector(".result-box"); // Store the empty result section in the variable resultBox.
 
@@ -132,10 +52,10 @@ function ComputeFullRoof() {
     resultP.innerText = "Below is the calculated aluminum roof materials needed to complete the roof according to the information you provided."; //Write text to the p element.
     resultBox.appendChild(resultP); //Append p element to resultBox;
 
-
-    calculateTrimmers(trimmers); //Call the calculateTrimmers() function.
+    
     calculateCorogatedSheets(roofList); //Call the calculateCorogatedSheets() function and pass in the roofList array.
     calculateCorogatedSheets(claddingList); //Call the calculateCorogatedSheets() function and pass in the claddingList array.
+    calculateTrimmers(); //Call the calculateTrimmers() function.
     calculateCorogatedSheets(ceilingList); // call the calculateCorogatedSheets() function and pass in the ceilingList array.
     
     const globalTotalP = document.createElement(p); // Create p element for the total meters for both the roof, cladding, ceiling and trimmers.
@@ -146,7 +66,92 @@ function ComputeFullRoof() {
 
 
 
-function calculateTrimmers(allTrimmers) {
+function calculateTrimmers() {
+    //Get the ridge input
+    const ridgeInput = document.querySelector(`#ridges`);
+    const ridgeLength = ridgeInput.value;
+    const ridgeWInput = document.querySelector(`#ridge-width`);
+    const ridgeWidth = ridgeWInput.value;
+
+    //Get the top-trimmers input
+    const topTrimmerInput = document.querySelector(`#top-trimmer-length`);
+
+    const topTrimmerwidthInput = document.querySelector(`#top-trimmers-width`);
+    const topTrimmerWidth = topTrimmerwidthInput.value;
+
+    //Get the Badge-board input
+    const bBInput = document.querySelector("#badge-board-length");
+
+    const bBWidthInput = document.querySelector("#badge-board-width");
+    const bBWidth = bBWidthInput.value;
+
+    //Get the gutter trimmers input
+    const gTrimmersInput = document.querySelector("#gutter-trimmers");
+    const gutterTrimmerLength = gTrimmersInput.value;
+    const gTrimmerWidthInput = document.querySelector("#gutter-trimmers-width");
+    const gutterTrimmerWidth = gTrimmerWidthInput.value;
+
+    //Get the bottom-trimmers input
+    const bottomTrimmersInput = document.querySelector("#bottom-trimmers");
+    const bottomTL = bottomTrimmersInput.value;
+    const bottomTrimmerW = document.querySelector("#bottom-trimmers-width");
+    const bottomTW = bottomTrimmerW.value;
+
+    //Get the wall-trimmers input
+    const wTInput = document.querySelector("#wall-trimmers");
+    const wTLength = wTInput.value;
+    const wTWidthInput = document.querySelector("#wall-trimmers-width");
+    const wTWidth = wTWidthInput.value;
+
+    //Get the gutter input
+    const gutterInput = document.querySelector("#gutters");
+    const gutterLength = gutterInput.value;
+    const gutterWidthInput = document.querySelector("#gutter-width");
+    const gutterWidth = gutterWidthInput.value;
+
+    const topTrimmerLength = topTrimmerInput.value;
+    const bBlength = bBInput.value;
+
+    const trimmers1 = [
+        {
+            nameOfItem: ridgeInput.name,
+            lengthOfItem: ridgeLength,
+            widthOfItem : ridgeWidth
+        },
+        {
+            nameOfItem: topTrimmerInput.name,
+            lengthOfItem: topTrimmerLength,
+            widthOfItem: topTrimmerWidth
+        },
+        {
+            nameOfItem: bBInput.name,
+            lengthOfItem: bBlength,
+            widthOfItem: bBWidth
+        },
+        {
+            nameOfItem: gTrimmersInput.name,
+            lengthOfItem: gutterTrimmerLength,
+            widthOfItem: gutterTrimmerWidth
+        },
+        {
+            nameOfItem: bottomTrimmersInput.name,
+            lengthOfItem: bottomTL,
+            widthOfItem: bottomTW
+        },
+        {
+            nameOfItem: wTInput.name,
+            lengthOfItem: wTLength,
+            widthOfItem: wTWidth
+        },
+        {
+            nameOfItem: gutterInput.name,
+            lengthOfItem: gutterLength,
+            widthOfItem: gutterWidth
+        }
+    ]
+    
+    
+    
     const resultBox = document.querySelector(".result-box"); // Store the empty result section in the variable resultBox.
 
     const fs1 = document.createElement("fieldset");// Create fieldset element.
@@ -158,7 +163,8 @@ function calculateTrimmers(allTrimmers) {
     let flatSheet = 0; // Initialize the total meters of flat sheet for all trimmers to zero.
     let listOfTrimmers = []; //Place all trimmers and individual subtotal meter in listOfTrimmers array.
     
-    allTrimmers.forEach(trimmer => {
+    /*allTrimmers.*/
+    trimmers1.forEach(trimmer => {
         let nameOfTrimmer = trimmer.nameOfItem; // Set the name of each trimmer in iteration to nameOfTrimmers.
         let length = parseFloat(trimmer.lengthOfItem); //Convert lengthOfItem in iteration to float and store it in length.
         let width = parseFloat(trimmer.widthOfItem); //Convert widthOfItem in iteration to float and store it in width.

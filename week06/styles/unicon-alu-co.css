@@ -180,7 +180,7 @@ footer {
     padding: 0 8px;
     font-family: "Roboto", sans-serif;
 }
-label[for="button"] {
+label[for="calculate-all"] {
     border: 3px solid var(--primary-color2);
     height: 70px;
     width: 100%;
