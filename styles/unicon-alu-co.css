@@ -66,11 +66,36 @@ body {
         margin: 0 80px;
         width: 100%;
         max-width: 10rem;
-    }
-
-    
+    }    
 }
 
+
+@media screen and (max-width: 1152px) {
+    .nav-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: var(--secondary-color1);
+        padding: 10px;
+        row-gap: .6rem;
+    }
+
+    .nav-bar a {
+        background-color: var(--primary-color1);
+        color: var(--accent-color2);
+        padding: 7px;
+        border: 2px solid var(--border-color);
+        border-radius: 7px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 20px;
+        margin: 0 80px;
+        width: 100%;
+        max-width: 600px;
+        align-self: center;
+    
+    }
+}
 .company-name {
     grid-column: 2/4;
     text-align: center;
