@@ -1,7 +1,8 @@
-const visitBox = document.getElementById("visit-times");
+const visitNum = document.getElementById("visit-times");
+const text = document.getElementById("visit-text");
 
 //const generatedVisit = window.localStorage.getItem();
-let numberOfVisit = localStorage.getItem("visit");
+let numberOfVisit = window.localStorage.getItem("visit");
 
 if (numOfVisit === null) {
     numberOfVisit = 1;
@@ -9,5 +10,7 @@ if (numOfVisit === null) {
     numberOfVisit = parseInt(numberOfVisit, 10);
 }
 
-visitBox.innerText = numberOfVisit;
-localStorage.setItem(toString(numberOfVisit));
+visitNum.innerText = numberOfVisit;
+
+text.innerText = "The number of times you have visited is ";
+window.localStorage.setItem(toString(numberOfVisit));
