@@ -24,7 +24,8 @@ const ceilingStr = ceilingInput.value;
 
 //Get the input button and asign it to variable button
 calculateBtn.addEventListener("click", () => {
-    ComputeFullRoof();
+    /*ComputeFullRoof();*/
+    calculateCorogatedSheets(roofList);
 })
 
 
