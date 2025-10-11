@@ -1,16 +1,17 @@
+
+
 const visitNum = document.getElementById("visit-times");
-const text = document.getElementById("visit-text");
 
-//const generatedVisit = window.localStorage.getItem();
-let numberOfVisit = window.localStorage.getItem("visit");
 
-if (numOfVisit === null) {
-    numberOfVisit = 1;
+let numOfVisit = parseInt(window.localStorage.getItem("visit"), 10) || 0;
+
+if (numOfVisit !== 0) {
+    visitNum.textContent = `You have visited ${numOfVisit} times`;
 } else {
-    numberOfVisit = parseInt(numberOfVisit, 10);
+    visitNum.textContent = "This is your first visit.";
+    
 }
 
-visitNum.innerText = numberOfVisit;
+numOfVisit ++;
 
-text.innerText = "The number of times you have visited is ";
-window.localStorage.setItem(toString(numberOfVisit));
+localStorage.setItem("visit", numOfVisit);
