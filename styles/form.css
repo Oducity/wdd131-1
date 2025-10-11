@@ -201,6 +201,7 @@ header h1 {
 
 .form-footer {
     background-color: var(--primary-color1);
+    margin-top: 1rem;
 }
 
 input[type="submit"] {
