@@ -16,7 +16,17 @@
 
 html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
 
-* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;}
+* { 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    border: 0;
+    margin: 0;
+}
+
+.form-body {
+    background-color: var(--accent-color1);
+}
 
 header {
     display: grid;
@@ -187,6 +197,10 @@ header h1 {
 
 .optional {
     color: #55f;
+}
+
+.form-footer {
+    background-color: var(--primary-color1);
 }
 
 input[type="submit"] {
