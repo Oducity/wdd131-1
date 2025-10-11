@@ -95,7 +95,9 @@ body {
         align-self: center;
     
     }
+
 }
+
 .company-name {
     grid-column: 2/4;
     text-align: center;
@@ -111,6 +113,8 @@ body {
     max-width: 960px;
     justify-self: center;
 }
+
+
 
 .main p, legend {
     color: var(--secondary-color1);
