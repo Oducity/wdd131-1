@@ -1,5 +1,5 @@
 const date = new Date();
-let currentYear = date.getFullYear();
+let currentYear = new Date.getFullYear();
 let text = currentYear.toString();
 document.getElementById("currentyear").innerHTML = text;
 
