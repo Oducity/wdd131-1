@@ -1,4 +1,5 @@
 
+    
 
 const calculateBtn = document.getElementById("calculate-all");
 
@@ -20,12 +21,14 @@ const ceilingStr = ceilingInput.value;
 //====================================================================================
 
 
+
 //====================================================================================
 
 //Get the input button and asign it to variable button
 calculateBtn.addEventListener("click", () => {
-    /*ComputeFullRoof();*/
-    calculateCorogatedSheets(roofList);
+    ComputeFullRoof();
+    
+
 })
 
 
@@ -34,6 +37,7 @@ calculateBtn.addEventListener("click", () => {
 const roofList = roofStr.split(",");
 const claddingList = claddingStr.split(",");
 const ceilingList = ceilingStr.split(",");
+const nameOfType = [roofInput.name, claddingInput.name, ceilingInput.name];
 
 
 
@@ -56,138 +60,64 @@ function ComputeFullRoof() {    //document.querySelector(".result-box").innerHTM
     
     calculateCorogatedSheets(roofList); //Call the calculateCorogatedSheets() function and pass in the roofList array.
     calculateCorogatedSheets(claddingList); //Call the calculateCorogatedSheets() function and pass in the claddingList array.
-    calculateTrimmers(); //Call the calculateTrimmers() function.
     calculateCorogatedSheets(ceilingList); // call the calculateCorogatedSheets() function and pass in the ceilingList array.
+    calculateTrimmers(trimmersInput); //Call the calculateTrimmers() function.
     
-    const globalTotalP = document.createElement(p); // Create p element for the total meters for both the roof, cladding, ceiling and trimmers.
-    globalTotalP.innerHTML = `Total Aluminum Materials : <strong>${globalTotal}</strong>`; // Using string literal, stored the total meters for everything in the globalTotalP variable.
+    const globalTotalP = document.createElement("p"); // Create p element for the total meters for both the roof, cladding, ceiling and trimmers.
+    globalTotalP.innerHTML = `<strong>Total Aluminum Materials : ${globalTotal}</strong>`; // Using string literal, stored the total meters for everything in the globalTotalP variable.
     resultBox.appendChild(globalTotalP);
 
 }
 
 
 
-function calculateTrimmers() {
-    //Get the ridge input
-    const ridgeInput = document.querySelector(`#ridges`);
-    const ridgeLength = ridgeInput.value;
-    const ridgeWInput = document.querySelector(`#ridge-width`);
-    const ridgeWidth = ridgeWInput.value;
 
-    //Get the top-trimmers input
-    const topTrimmerInput = document.querySelector(`#top-trimmer-length`);
 
-    const topTrimmerwidthInput = document.querySelector(`#top-trimmers-width`);
-    const topTrimmerWidth = topTrimmerwidthInput.value;
+function calculateTrimmers(trimmers1) {
 
-    //Get the Badge-board input
-    const bBInput = document.querySelector("#badge-board-length");
-
-    const bBWidthInput = document.querySelector("#badge-board-width");
-    const bBWidth = bBWidthInput.value;
-
-    //Get the gutter trimmers input
-    const gTrimmersInput = document.querySelector("#gutter-trimmers");
-    const gutterTrimmerLength = gTrimmersInput.value;
-    const gTrimmerWidthInput = document.querySelector("#gutter-trimmers-width");
-    const gutterTrimmerWidth = gTrimmerWidthInput.value;
-
-    //Get the bottom-trimmers input
-    const bottomTrimmersInput = document.querySelector("#bottom-trimmers");
-    const bottomTL = bottomTrimmersInput.value;
-    const bottomTrimmerW = document.querySelector("#bottom-trimmers-width");
-    const bottomTW = bottomTrimmerW.value;
-
-    //Get the wall-trimmers input
-    const wTInput = document.querySelector("#wall-trimmers");
-    const wTLength = wTInput.value;
-    const wTWidthInput = document.querySelector("#wall-trimmers-width");
-    const wTWidth = wTWidthInput.value;
-
-    //Get the gutter input
-    const gutterInput = document.querySelector("#gutters");
-    const gutterLength = gutterInput.value;
-    const gutterWidthInput = document.querySelector("#gutter-width");
-    const gutterWidth = gutterWidthInput.value;
-
-    const topTrimmerLength = topTrimmerInput.value;
-    const bBlength = bBInput.value;
-
-    const trimmers1 = [
-        {
-            nameOfItem: ridgeInput.name,
-            lengthOfItem: ridgeLength,
-            widthOfItem : ridgeWidth
-        },
-        {
-            nameOfItem: topTrimmerInput.name,
-            lengthOfItem: topTrimmerLength,
-            widthOfItem: topTrimmerWidth
-        },
-        {
-            nameOfItem: bBInput.name,
-            lengthOfItem: bBlength,
-            widthOfItem: bBWidth
-        },
-        {
-            nameOfItem: gTrimmersInput.name,
-            lengthOfItem: gutterTrimmerLength,
-            widthOfItem: gutterTrimmerWidth
-        },
-        {
-            nameOfItem: bottomTrimmersInput.name,
-            lengthOfItem: bottomTL,
-            widthOfItem: bottomTW
-        },
-        {
-            nameOfItem: wTInput.name,
-            lengthOfItem: wTLength,
-            widthOfItem: wTWidth
-        },
-        {
-            nameOfItem: gutterInput.name,
-            lengthOfItem: gutterLength,
-            widthOfItem: gutterWidth
-        }
-    ]
-    
-    
-    
     const resultBox = document.querySelector(".result-box"); // Store the empty result section in the variable resultBox.
 
     const fs1 = document.createElement("fieldset");// Create fieldset element.
     const le1 = document.createElement("legend");
     le1.innerText = "Trimmers/Flat Sheet";
     fs1.appendChild(le1);
+
+
+    const pOfTrimmers = document.createElement("p"); //Paragraph for the list of all computed trimmers.
+    const pOfTotalMeters = document.createElement("p"); //Assign paragraph for the total meters of trimmers.
+    const pOfAdjustment = document.createElement("p"); // Parahraph for fabrication error adjustment.
     
-    
+
     let flatSheet = 0; // Initialize the total meters of flat sheet for all trimmers to zero.
-    let listOfTrimmers = []; //Place all trimmers and individual subtotal meter in listOfTrimmers array.
+    //let listOfTrimmers = []; //Place all trimmers and individual subtotal meter in listOfTrimmers array.
     
+
+
     /*allTrimmers.*/
     trimmers1.forEach(trimmer => {
-        let nameOfTrimmer = trimmer.nameOfItem; // Set the name of each trimmer in iteration to nameOfTrimmers.
-        let length = parseFloat(trimmer.lengthOfItem); //Convert lengthOfItem in iteration to float and store it in length.
-        let width = parseFloat(trimmer.widthOfItem); //Convert widthOfItem in iteration to float and store it in width.
+        let lengthN = parseFloat(trimmer.lengt); //Convert lengthOfItem in iteration to float and store it in length.
+        let widthN = parseFloat(trimmer.width); //Convert widthOfItem in iteration to float and store it in width.
 
-        let trimmerTotal = (length * width) / 1.2; //Compute total length of each type of trimmer. 
+
+        let trimmerTotal = (lengthN * widthN) / 1.2; //Compute total length of each type of trimmer. 
         flatSheet += trimmerTotal; //Update total flat sheet.
-        let trimmerValue = `${nameOfTrimmer}: ${trimmerTotal}`; // Concatinate the name af trimmer and its total meter and store in a variable.
+        let trimmerValue = `${trimmer.name}: ${trimmerTotal}`; // Concatinate the name af trimmer and its total meter and store in a variable.
         listOfTrimmers.push(trimmerValue); //Update the listOfTrimmers array.
 
     });
-    const pOfTrimmers = document.createElement(p); //Paragraph for the list of all computed trimmers.
-    const pOfTotalMeters = document.createElement(p); //Assign paragraph for the total meters of trimmers.
-    const pOfAdjustment = document.createElement(p); // Parahraph for fabrication error adjustment.
+    
+    
+    
 
     const adjustment = (flatSheet / 100) * 7; //Frabrication error adjustment (7 percent).
     let totalFlatSheet = flatSheet + adjustment; //Add frabrication error adjustment to the total flat sheet.
+    globalTotal += totalFlatSheet;
 
-    pOfTrimmers.innerHTML = `All Trimmers Brakedown: ${listOfTrimmers}`; // Store array listOfTrimmers in paragraph pOfTrimmers.
-    pOfTotalMeters.innerHTML = `The Total Meter for All Trimmers: ${totalFlatSheet}`; //Store total meters of all trimmers in the paragraph of pOfTotalTrimmers.
-    pOfAdjustment.innerHTML = `Added Meters for Fabrication Error Adjustment: ${adjustment}`; // Store the fabrication error adjustment added value in pOfAdjusment.
+    pOfTrimmers.textContent = `All Trimmers Brakedown: ${listOfTrimmers}`; // Store array listOfTrimmers in paragraph pOfTrimmers.
+    pOfTotalMeters.innerHTML = `<strong>The Total Meter for All Trimmers: ${totalFlatSheet}</strong>`; //Store total meters of all trimmers in the paragraph of pOfTotalTrimmers.
+    pOfAdjustment.innerHTML = `<strong>Added Meters for Fabrication Error Adjustment: ${adjustment}</strong>`; // Store the fabrication error adjustment added value in pOfAdjusment.
 
-    fs1.appendChild(pOfTrimmers); //Append paragraph of array of trimmers to the fieldset.
+    //fs1.appendChild(pOfTrimmers); //Append paragraph of array of trimmers to the fieldset.
     fs1.appendChild(pOfAdjustment); //Append paragraph of fabrication error adjustment value to the fieldset.
     fs1.appendChild(pOfTotalMeters); //Append the paragraph of the total meter of all trimmers to the fieldset.
 
@@ -203,7 +133,7 @@ function calculateCorogatedSheets(sheets) {
 
     const fs = document.createElement("fieldset"); // create a fieldset element.
     const le = document.createElement("legend");//Create a legend element.
-    le.innerText = `${sheets.name}`;//Fix the text content of the legend element.
+    le.innerText = "Corogated Sheets";//Fix the text content of the legend element.
     fs.appendChild(le); //Append legend to the fieldset.
     const p2 = document.createElement("P"); //Create second paragraph.
     
@@ -221,10 +151,52 @@ function calculateCorogatedSheets(sheets) {
         fs.appendChild(p1);
 
     });
-    p2.innerHTML = `<strong>${sheets.name} Total:     ${roofingTotal}</strong>`; //Store total meter along with the sheet type in the p2 element.
-    fs.appendChild(p2); //Append p2 into the fieldset.
     globalTotal += roofingTotal; // Update total meter in the globalTotal variable.
+    p2.innerHTML = `<strong>Total :     ${roofingTotal}</strong> `; //Store total meter along with the sheet type in the p2 element.
+    fs.appendChild(p2); //Append p2 into the fieldset.
+    
 
     resultBox.appendChild(fs);
 
 };
+
+
+
+
+const trimmersInput = [
+    {
+        name: "RidgeCap",
+        lengt: parseFloat(document.getElementById("ridges").value),
+        width: parseFloat(document.getElementById("ridge-width").value),
+    },
+    {
+        name: "Top-trimmers",
+        lengt: parseFloat(document.getElementById("top-trimmers-length").value),
+        width: parseFloat(document.getElementById("top-trimmers-width").value)
+    },
+    {
+        name: "Badge-boards",
+        lengt: parseFloat(document.getElementById("badge-board").value),
+        width: parseFloat(document.getElementById("badge-board-width").value)
+    },
+    {
+        name: "Gutters",
+        lengt: parseFloat(document.getElementById("gutters").value),
+        width: parseFloat(document.getElementById("gutter-width").valu)
+    },
+    {
+        name: "Gutter-trimmers",
+        lengt: parseFloat(document.getElementById("gutter-trimmers").value),
+        width: parseFloat(document.getElementById("gutter-trimmers-width").value)
+    },
+    {
+        name: "Bottom-trimmers",
+        lengt: parseFloat(document.getElementById("bottom-trimmers").value),
+        width: parseFloat(document.getElementById("bottom-trimmers-width").value)
+    },
+    {
+        name: "Wall-trimmers",
+        lengt: parseFloat(document.getElementById("wall-trimmers").value),
+        width: parseFloat(document.getElementById("wall-trimmers-width").value)
+    }
+]
