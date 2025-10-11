@@ -232,3 +232,6 @@ label[for="calculate-all"] {
 .calc-footer, .form-body {
     margin: 0;
 }
+#lastModified {
+ padding-bottom: 35px;
+}
