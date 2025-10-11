@@ -64,7 +64,7 @@ function ComputeFullRoof() {    //document.querySelector(".result-box").innerHTM
     calculateTrimmers(trimmersInput); //Call the calculateTrimmers() function.
     
     const globalTotalP = document.createElement("p"); // Create p element for the total meters for both the roof, cladding, ceiling and trimmers.
-    globalTotalP.innerHTML = `<strong>Total Aluminum Materials : ${globalTotal}</strong>`; // Using string literal, stored the total meters for everything in the globalTotalP variable.
+    globalTotalP.innerHTML = `<strong>Grand Total Meters: ${allTotal}</strong>`; // Using string literal, stored the total meters for everything in the globalTotalP variable.
     resultBox.appendChild(globalTotalP);
 
 }
@@ -126,7 +126,7 @@ function calculateTrimmers(trimmers1) {
 };
 
 
-
+let allTotal = 0;//Initialize all total
 
 function calculateCorogatedSheets(sheets) {
     const resultBox = document.querySelector(".result-box"); // Store the empty result section in the variable resultBox.
@@ -135,7 +135,9 @@ function calculateCorogatedSheets(sheets) {
     const le = document.createElement("legend");//Create a legend element.
     le.innerText = "Corogated Sheets";//Fix the text content of the legend element.
     fs.appendChild(le); //Append legend to the fieldset.
-    const p2 = document.createElement("P"); //Create second paragraph.
+    //const p2 = document.createElement("P"); //Create second paragraph.
+    
+    const allTotalP = document.createElement("p");
     
     let roofingTotal = 0;//Initialize the total meter in the list.
 
@@ -151,9 +153,12 @@ function calculateCorogatedSheets(sheets) {
         fs.appendChild(p1);
 
     });
-    globalTotal += roofingTotal; // Update total meter in the globalTotal variable.
-    p2.innerHTML = `<strong>Total :     ${roofingTotal}</strong> `; //Store total meter along with the sheet type in the p2 element.
-    fs.appendChild(p2); //Append p2 into the fieldset.
+    allTotal += roofingTotal; // Update total meter in the globalTotal variable.
+    //p2.innerHTML = `<strong>Total :     ${roofingTotal}</strong> `; //Store total meter along with the sheet type in the p2 element.
+    
+    allTotalP.innerHTML = `<strong> All Total:  ${allTotal}</strong>`;
+    //fs.appendChild(p2); //Append p2 into the fieldset.
+    fs.appendChild(allTotalP);
     
 
     resultBox.appendChild(fs);
