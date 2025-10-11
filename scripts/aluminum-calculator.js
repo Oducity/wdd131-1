@@ -28,7 +28,7 @@ const ceilingStr = ceilingInput.value;
 calculateBtn.addEventListener("click", () => {
     ComputeFullRoof();
     
-
+    
 })
 
 
@@ -49,7 +49,7 @@ function ComputeFullRoof() {    //document.querySelector(".result-box").innerHTM
 
     const resultBox = document.querySelector(".result-box"); // Store the empty result section in the variable resultBox.
     const resultHeading = document.createElement("h2"); // Create h2 element.
-    
+
     resultHeading.innerText = "Your Result" // Write text into the h2 element.
     resultBox.appendChild(resultHeading); //Added h2 element and value to resultBox.
 
