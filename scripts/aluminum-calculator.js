@@ -48,8 +48,8 @@ function ComputeFullRoof() {    //document.querySelector(".result-box").innerHTM
     
 
     const resultBox = document.querySelector(".result-box"); // Store the empty result section in the variable resultBox.
-
     const resultHeading = document.createElement("h2"); // Create h2 element.
+    
     resultHeading.innerText = "Your Result" // Write text into the h2 element.
     resultBox.appendChild(resultHeading); //Added h2 element and value to resultBox.
 
@@ -135,10 +135,9 @@ function calculateCorogatedSheets(sheets) {
     const le = document.createElement("legend");//Create a legend element.
     le.innerText = "Corogated Sheets";//Fix the text content of the legend element.
     fs.appendChild(le); //Append legend to the fieldset.
-    //const p2 = document.createElement("P"); //Create second paragraph.
+    
     
     const allTotalP = document.createElement("p");
-    
     let roofingTotal = 0;//Initialize the total meter in the list.
 
 
@@ -154,13 +153,9 @@ function calculateCorogatedSheets(sheets) {
 
     });
     allTotal += roofingTotal; // Update total meter in the globalTotal variable.
-    //p2.innerHTML = `<strong>Total :     ${roofingTotal}</strong> `; //Store total meter along with the sheet type in the p2 element.
-    
     allTotalP.innerHTML = `<strong> All Total:  ${allTotal}</strong>`;
-    //fs.appendChild(p2); //Append p2 into the fieldset.
-    fs.appendChild(allTotalP);
     
-
+    fs.appendChild(allTotalP);
     resultBox.appendChild(fs);
 
 };
