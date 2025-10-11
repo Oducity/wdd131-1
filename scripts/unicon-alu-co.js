@@ -1,12 +1,4 @@
 
-const date = new Date();
-let currentYear = new Date.getFullYear();
-let text = currentYear.toString();
-document.getElementById("currentyear").innerHTML = text;
-
-let lastModify = date(document.lastModified);
-let lastModifyString = "Last Updated:" + " " + lastModify.toString();
-document.getElementById("lastModified").innerHTML = lastModifyString;
 
 const roofs = [
     {
@@ -60,9 +52,3 @@ function createRoofBox(roof) {
         document.querySelector(".main").appendChild(xtion); //Append the section element the the main element.
     });
 };
-
-
-
-/*      ====================================================================        */
-
-
