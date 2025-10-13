@@ -32,9 +32,10 @@ homePage.addEventListener("click", () => {
 
 
 function createRoofBox(roof) {
+    let xtion = document.createElement("section"); //Created section element in the home.
+    xtion.setAttribute("class", "roof-box");
     roof.forEach(rf => {
-        let xtion = document.createElement("section"); //Created section element in the home.
-        xtion.setAttribute("class", "roof-box");
+        
 
         let image = document.createElement("img"); //Created img element in the home.
         let leg = document.createElement("legend"); //Created the legend elements using javascript.

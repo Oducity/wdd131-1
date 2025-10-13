@@ -96,6 +96,7 @@ body {
     
     }
 
+
 }
 
 .company-name {
@@ -106,6 +107,12 @@ body {
     margin-bottom: 10px;
     padding-top: 10px;
     color: var(--accent-color2);
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .main {
