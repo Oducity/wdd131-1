@@ -24,8 +24,16 @@ html {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
     margin: 0;
 }
 
-.form-body {
+.form-body, .body {
     background-color: var(--accent-color1);
+}
+
+
+
+.header {
+    background-color: var(--primary-color1);
+    color: var(--accent-color2);
+    border-radius: 7px;
 }
 
 header {
@@ -228,7 +236,8 @@ header h1 {
 
 .form-footer {
     background-color: var(--primary-color1);
-    margin-top: 1rem;
+    margin-top: .5rem;
+    border-radius: 7px;
 }
 
 input[type="submit"] {
