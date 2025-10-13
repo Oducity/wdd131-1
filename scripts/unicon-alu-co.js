@@ -39,17 +39,21 @@ function createRoofBox(roof) {
 
         let image = document.createElement("img"); //Created img element in the home.
         let leg = document.createElement("legend"); //Created the legend elements using javascript.
+        let pg = document.createElement("p"); //Create p element for the image description.
+
     
         image.setAttribute("src", rf.imageUrl); //Set the src attributes for img elements.
         image.setAttribute("alt", rf.roofName); //Set the alt attributes using javascript.
         image.setAttribute("class", `${rf.dateDone}img`); //Set class attribute for images using their date + img.
         image.setAttribute("loading", "lazy"); //Set the image loading attributes to lazy.
         leg.setAttribute("class", `${rf.dateDone}`); //Set class attribute for legend element using corresponding image date.
-        leg.innerHTML = `<strong>📛Name:</strong> ${rf.roofName} &nbsp &nbsp <strong>⚖Thichness:</strong> ${rf.guage}mm &nbsp <strong>🗺️Location:</strong> ${rf.location} &nbsp &nbsp <strong> 📅 Date:</strong> ${rf.dateDone}`; //Created innerHTML value using javascript.
+        pg.innerHTML = `<strong>📛Name:</strong> ${rf.roofName} &nbsp &nbsp <strong>⚖Thichness:</strong> ${rf.guage}mm &nbsp <strong>🗺️Location:</strong> ${rf.location} &nbsp &nbsp <strong> 📅 Date:</strong> ${rf.dateDone}`; //Created innerHTML value using javascript.
 
-        leg.appendChild(image); //Appended the img elements and their content to the section elements.
+        leg.appendChild(image); //Appended the image.
+        leg.appendChild(pg); //Appended the img elements and their content to the section elements.
         xtion.appendChild(leg); //Appended the legend elements and their content to the section elements.
 
         document.querySelector(".main").appendChild(xtion); //Append the section element the the main element.
     });
+    
 };
